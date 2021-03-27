@@ -13,6 +13,6 @@
 ## Harjoitustyö ##
 Harjoitustyön aiheena on sovellus jonka avulla voi harjoitella 
 
-  [Vaatimusmäärittely]
+  [Määrittelydokumentti]
 
   [Harjoitustyöhön käytetyt tunnit]
