@@ -13,6 +13,6 @@
 ## Harjoitustyö ##
 Harjoitustyön aiheena on sovellus jonka avulla voi harjoitella 
 
-  [Määrittelydokumentti]
+  [Määrittelydokumentti](https://github.com/sanikemppainen/ot-harjoitustyo/blob/main/dokumentaatio/M%C3%A4%C3%A4rittelydokumentti.md)
 
   [Harjoitustyöhön käytetyt tunnit]
