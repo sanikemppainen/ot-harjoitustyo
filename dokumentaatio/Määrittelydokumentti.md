@@ -36,11 +36,17 @@ Käyttäjä voi palata valikkoon
 
 ## Jatkokehitysideoita ##
 Ohjelmaa voisi täydentää näillä ideoilla:
+	
 	Mahdollisuus kysyä vinkkiä kysymyksiin vastattaessa, esim 3 vinkkiä per peli
+	
 	Pääkäyttäjän luominen joka voisi poistaa käyttäjiä tai tarkastella kaikkien statistiikkaa
+	
 	Kavereiden lisääminen ja heitä vastaan pelaaminen
+	
 	Oman käyttäjän poistaminen
+	
 	Timer-ominaisuus, aikarajat kysymyksiin vastaamiselle
+	
 	Omien kysymyssettien luominengame
 
 
