@@ -3,6 +3,10 @@
 
 Sovelluksen käyttäjä voi valita haluamansa aiheen ja vastata siihen liittyviin monivalintakysymyksiin. Käyttäjät voivat tarkastella kuinka hyvin he osaavat eri testien aihealueet.
 
+## Toimintaympäristön rajoitteet ##
+Ohjelman tulee toimia macOS ja Linux käyttöjärjestelmillä.
+Ohjelmisto tehdään käyttäen Javaa.
+
 ## Käyttäjät ##
 Sovelluksessa on vain yksi käyttäjärooli, normaali pelaaja. 
 
