@@ -1,0 +1,12 @@
+2021-04-12 23:47:55 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERDB" already exists; SQL statement:
+CREATE TABLE UserDB (username char primary key, password char, q1noplayed int, q1average double, q2noplayed int, q2average double) [42101-199]
+2021-04-13 00:07:33 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERDAO" already exists; SQL statement:
+CREATE TABLE USERDAO (username char primary key, password char, q1noplayed int, q1average double, q2noplayed int, q2average double) [42101-199]
+2021-04-13 01:19:43 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO USERDAO VALUES(USERNAME, PASSWORD, Q1NOPLAYED, Q1AVERAGE, Q2NOPLAYED, Q2AVERAGE) VALUES[*] (?,?,0,0,0,0) "; SQL statement:
+INSERT INTO USERDAO VALUES(username, password, q1noplayed, q1average, q2noplayed, q2average) VALUES (?,?,0,0,0,0) [42000-199]
+2021-04-13 01:25:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERDAO" not found; SQL statement:
+INSERT INTO INFORMATION_SCHEMA.USERDAO (username, password, q1noplayed, q1average, q2noplayed, q2average) VALUES (?,?,0,0,0,0) [42102-199]
