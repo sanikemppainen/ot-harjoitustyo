@@ -1,18 +1,11 @@
-# OT harjoitustyö #
-## Laskarit ##
-**Viikko1**  *löytyy täältä:* 
+# OPINTOPIIRI SOVELLUS #
 
-  [komentorivi.txt](https://github.com/sanikemppainen/ot-harjoitustyo/blob/main/laskarit/viikko1/komentorivi.txt)
+Sovelluksen tarkoitus on antaa käyttäjän harjoitella monivalintakysymyksillä tietyn aihepiirin tietoja. Sovellus pitää yllä tietokantaa eri käyttäjistä ja näiden käyttäjien pelien datasta, kuten mitä peliä on pelattu eniten ja minkä pelin onnistumisprosentti on pienin. 
 
-  [gitlog.txt](https://github.com/sanikemppainen/ot-harjoitustyo/blob/main/laskarit/viikko1/gitlog.txt)
-
-**Viikko2**  *löytyy täältä:* 
-
-  [Maksukortti ja Unicafe](https://github.com/sanikemppainen/ot-harjoitustyo/tree/main/laskarit/viikko2)
-
-## Harjoitustyö ##
-Harjoitustyön aiheena on sovellus jonka avulla voi harjoitella 
+## Dokumentaatio ## 
 
   [Määrittelydokumentti](https://github.com/sanikemppainen/ot-harjoitustyo/blob/main/dokumentaatio/M%C3%A4%C3%A4rittelydokumentti.md)
 
   [Harjoitustyöhön käytetyt tunnit](https://github.com/sanikemppainen/ot-harjoitustyo/blob/main/dokumentaatio/tuntikirjanpito.md)
+ 
+ 
