@@ -8,4 +8,17 @@ Sovelluksen tarkoitus on antaa käyttäjän harjoitella monivalintakysymyksillä
 
   [Harjoitustyöhön käytetyt tunnit](https://github.com/sanikemppainen/ot-harjoitustyo/blob/main/dokumentaatio/tuntikirjanpito.md)
  
- 
+ ## Komentorivitoiminnot ##
+### Testaus
+
+Testit suoritetaan komennolla
+
+```
+mvn test
+```
+
+Testikattavuusraportti luodaan komennolla
+
+```
+mvn jacoco:report
+```
