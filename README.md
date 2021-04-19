@@ -22,8 +22,7 @@ mvn compile exec:java -Dexec.mainClass=opintopiiri.domain.Main
 Testit suoritetaan opintopiiri kansiossa komennolla
 
 ```
-mvn compile exec:java -Dexec.mainClass=opintopiiri.domain.Main
-
+mvn test
 ```
 
 Testikattavuusraportti luodaan komennolla
