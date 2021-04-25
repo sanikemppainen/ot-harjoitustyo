@@ -11,14 +11,17 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import opintopiiri.dao.UserDao;
 import opintopiiri.domain.Functions;
 import opintopiiri.domain.User;
+import opintopiiri.dao.Quiz2;
         
 public class UI extends Application{
+    
     Functions functions=new Functions(this);
     /*Button registerButton= new Button();
     Button loginButton= new Button();
@@ -31,15 +34,21 @@ public class UI extends Application{
     Button createNew=new Button();
     Button returnToLogin=new Button();*/
     UserDao userdao;
+    Quiz2 quiz2;
     String username;
     String password;
     int q1noplayed;
     double q1average;
     int q2noplayed;
     double q2average;
+    String answerTrimmed;
+    private int i;
+
     
     public UI(){
         this.userdao= new UserDao(new User(username, password, q1noplayed, q1average, q2noplayed, q2average));
+        this.quiz2= new Quiz2();
+        this.i=0;
     }
     
     @Override
@@ -103,13 +112,85 @@ public class UI extends Application{
         Scene registerScene= new Scene(register);
 
         //luodaan gamemenuScene
-        Label gamemenutect= new Label("game menu scene");
+        Label gamemenutext= new Label("Choose a quiz to play or view stats");
+        Button quiz1= new Button("Quiz 1: Fish");
+        Button quiz2= new Button("Quiz 2: ");
+        Button quiz3= new Button("Quiz 3: ");
+        Button seeStats= new Button("See stats");
+        
         
         GridPane gamemenu= new GridPane();
+        gamemenu.setPrefSize(800, 500);
+        gamemenu.setAlignment(Pos.CENTER);
+        gamemenu.setVgap(25);
+        gamemenu.setHgap(40);
+        gamemenu.setPadding(new Insets(5,5,5,5));
         
-        gamemenu.add(gamemenutect, 1, 0);
+        gamemenu.add(gamemenutext, 0, 0);
+        gamemenu.add(quiz1, 1, 0);
+        gamemenu.add(quiz2, 2, 0);
+        gamemenu.add(quiz3, 3, 0);
+        gamemenu.add(seeStats, 4, 0);
         
         Scene gamemenuScene= new Scene(gamemenu);
+        
+        //luodaan gamescene QUIZ 1
+        //ERI QUIZES ERI SCENET
+        //tätä sitten muokataan, otsikkoa, kysymyksiä, vastauksia jne
+        
+        Label gametext= new Label("Quiz 1: Fish "+"\n"+"Type in the answer in the box below");
+        Label question= new Label("What kind of fish is Nemo in the movie 'Finding Nemo'?"+"\n"+"a:Tiger Shark "+"\n"+"b:Salmon "+"\n"+"c:Clownfish "+"\n"+"d: Goldfish");
+        TextField answer= new TextField();
+        Button next= new Button("Next");
+        
+        GridPane game= new GridPane();
+        game.setPrefSize(800, 500);
+        game.setAlignment(Pos.CENTER);
+        game.setVgap(25);
+        game.setHgap(40);
+        game.setPadding(new Insets(5,5,5,5));
+        
+        game.add(gametext, 0, 0);
+        game.add(question, 1, 0);
+        game.add(answer, 1, 1);
+        game.add(next, 2,1);
+       
+        Scene gameScene= new Scene(game);
+        
+        //gameoverscene
+        Label overtext= new Label("Game over!");
+        Label percentage= new Label("");
+        Button goBackToMenu= new Button("Go back to menu");
+        
+        GridPane gameover= new GridPane();
+        gameover.setPrefSize(800, 500);
+        gameover.setAlignment(Pos.CENTER);
+        gameover.setVgap(25);
+        gameover.setHgap(40);
+        game.setPadding(new Insets(5,5,5,5));
+        
+        gameover.add(overtext, 0, 0);
+        gameover.add(percentage, 0, 1);
+        gameover.add(goBackToMenu, 0, 2);
+        
+        
+        Scene gameoverScene= new Scene(gameover);
+        
+        //statsScene
+        Label statsText= new Label("STATS");
+        Label stats1= new Label("You have played Quiz 1 "+this.functions.noOfTimesPlayed(1)+" times"+"\n"+"and your average score for Quiz 1 is "+this.functions.countAverage(1)+"");
+        Button goBack2= new Button("Return to menu");
+        
+        GridPane stats= new GridPane();
+        stats.setPrefSize(800, 500);
+        stats.setAlignment(Pos.CENTER);
+        
+        stats.add(statsText, 0, 0);
+        stats.add(stats1, 0, 1);
+        stats.add(goBack2, 0, 2);
+        
+        Scene statsScene= new Scene(stats);
+        
         
         //siirrytään loginista pelimenuun
         loginButton.setOnAction((event)->{
@@ -160,6 +241,47 @@ public class UI extends Application{
             
         });
         
+        //siirrytään peliin 1
+        quiz1.setOnAction((event)->{
+            stage.setScene(gameScene);
+        });
+        
+        // siirrytään vastauksesta seuraavaan kysym, muokkaa scenea sopivaksi
+        
+        next.setOnAction((event)->{
+            question.setText(this.functions.getQ());
+            answerTrimmed=answer.getText().trim().toLowerCase();
+            if(answerTrimmed.equals(this.functions.getA())){
+                this.functions.increasePoints();
+            }
+            if(!this.functions.checkIfMoreQs()){
+                System.out.println("sisällä");
+                percentage.setText("You got "+this.functions.getPoints()+"/8 correct!");
+                stage.setScene(gameoverScene);
+            }
+            answer.setText("");
+        });
+        
+        //palaa menuun 1 scenestä
+        goBackToMenu.setOnAction((event)->{
+            this.functions.addNoOfTimesPlayed(1);
+            this.functions.addPoints(this.functions.getPoints());
+            //this.functions.countAverage(1);
+            this.functions.indexToZero();
+            question.setText("What kind of fish is Nemo in the movie 'Finding Nemo'?"+"\n"+"a:Tiger Shark "+"\n"+"b:Salmon "+"\n"+"c:Clownfish "+"\n"+"d: Goldfish");
+            stage.setScene(gamemenuScene);
+        });
+        
+        //mene stats
+        seeStats.setOnAction((event)->{
+            this.functions.countAverage(1);
+            //muillekkin samat
+            stats1.setText("You have played Quiz 1 "+this.functions.noOfTimesPlayed(1)+" times"+"\n"+"and your average score for Quiz 1 is "+this.functions.countAverage(1)+"");
+            stage.setScene(statsScene);
+        });
+        goBack2.setOnAction((event)->{
+            stage.setScene(gamemenuScene);
+        });
         
         //lopussa vaan show
         stage.show();
