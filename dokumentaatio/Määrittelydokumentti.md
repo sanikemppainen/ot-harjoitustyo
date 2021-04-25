@@ -19,24 +19,24 @@ voi tarkastella omien pelien statistiikkaa. Tästä siirrytään sitten haluamal
 
 ## Perusversion tarjoama toiminnallisuus ##
 ## Ennen kirjautumista ##
-Käyttäjä voi luoda uuden, käyttäjänimen jonka tulee olla uniikki ja siihen salasanan
-Käyttäjä voi kirjautua sisään jos tiedot on oikein, jos ei niin järjestelmä kehottaa luomaan uuden käyttäjänimen tai kokeilemaan uudelleen
+Käyttäjä voi luoda uuden, käyttäjänimen jonka tulee olla uniikki ja siihen salasanan. TOIMII
+Käyttäjä voi kirjautua sisään jos tiedot on oikein, jos ei niin järjestelmä kehottaa luomaan uuden käyttäjänimen tai kokeilemaan uudelleen TOIMII
 
 ## Kirjautumisen jälkeen ##
-Käyttäjälle aukeaa pelimenu näkymä missä on lista peleistä ja myös nappi mistä painaa jos haluaa päästä katsomaan pelien statistiikkaa.
-Käyttäjä voi valita haluaako hän pelata peliä vai tarkastella pelien pelaamiseen liittyvää statistiikkaa.
+Käyttäjälle aukeaa pelimenu näkymä missä on lista peleistä ja myös nappi mistä painaa jos haluaa päästä katsomaan pelien statistiikkaa. TOIMII
+Käyttäjä voi valita haluaako hän pelata peliä vai tarkastella pelien pelaamiseen liittyvää statistiikkaa. TOIMII
 Käyttäjä voi kirjautua ulos.
 
 ### Pelaaminen ###
-Käyttäjä näkee listan mahdollisista peleistä joista voi valita yhden ja avata pelinäkymän.
-Käyttäjä näkee kysymyksen ja voi valita neljästä vaihtoehdosta haluamansa vastauksen ja siirtyä seuraavaan kysymykseen.
-	Tämä toistuu kunnes kysymykset loppuvat
-Käyttäjä näkee montako kysymystä sai oikein
-Käyttäjä voi palata pelimenu näkymään tai pelata saman pelin uudelleen
+Käyttäjä näkee listan mahdollisista peleistä joista voi valita yhden ja avata pelinäkymän. TOIMII
+Käyttäjä näkee kysymyksen ja voi valita 2-4 vaihtoehdosta haluamansa vastauksen ja siirtyä seuraavaan kysymykseen. TOIMII
+	Tämä toistuu kunnes kysymykset loppuvat TOIMII
+Käyttäjä näkee montako kysymystä sai oikein TOIMII
+Käyttäjä voi palata pelimenu näkymään. TOIMII
 
 ### Statistiikka ###
-Käyttäjä näkee mitä peliä on pelattu eniten ja vähiten sekä missä pelissä hän on onnistunut parhaiten ja huonoiten.
-Käyttäjä voi palata valikkoon
+Käyttäjä näkee mitä peliä on pelattu eniten ja vähiten sekä missä pelissä hän on onnistunut parhaiten ja huonoiten. EI TOIMI VIELÄ OIKEIN
+Käyttäjä voi palata valikkoon.TOIMII
 
 ## Jatkokehitysideoita ##
 Ohjelmaa voisi täydentää näillä ideoilla:
@@ -54,5 +54,5 @@ Ohjelmaa voisi täydentää näillä ideoilla:
 	Omien kysymyssettien luominengame
 
 
-## Tällähetkellä toimivat osat ##
+## Tällä hetkellä toimivat osat (YHTEENVETO) ##
 Ohjelmassa toimii uuden käyttäjätunnuksen luominen ja sen tarkistus tietokannasta. Luoduilla tunnuksilla pääseen kirjautumaan sovellukseen ja avaamaan pelimenun jossa on napit kahdelle eri pelille ja näistä voi valita kumpaa pelaa. Molemmat pelit toimivat (näät kysymykset, voit vastata niihin, edetä seuraavaan kysymykseen) ja niiden päätyttyä voi palata takaisin pelimenuun ja näet yksittäisen pelin pisteet. Stats sivu on tehty ja se toimii osittain mutta statsien laskeminen ja tietokantaan tiedon laittaminen/hakeminen on tältä osin vielä kesken. 
