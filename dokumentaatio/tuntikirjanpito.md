@@ -10,3 +10,5 @@
 | 19.4  | 3    | GUI edistys, peliscenejen rakennus |
 | 25.4  | 10   | Ensimmäisen pelin tekeminen loppuun, pelien logiikan nollaus, GUI edistys, stats sivun aloitus|
 
+Tuntien summa: 33
+
