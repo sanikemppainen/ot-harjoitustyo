@@ -7,3 +7,6 @@
 | 6.4   | 4    | SQL H2 asennus ja konfigurointi, tutustuminen sen käyttöön |
 | 12.4  | 5    | GUI aloitus ja rakentaminen |
 | 13.4  | 6    | GUI ja SQL konfigurointi toisiinsa ja testien tekeminen |
+| 19.4  | 3    | GUI edistys, peliscenejen rakennus |
+| 25.4  | 10   | Ensimmäisen pelin tekeminen loppuun, pelien logiikan nollaus, GUI edistys, stats sivun aloitus|
+
