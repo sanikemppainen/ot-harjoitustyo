@@ -7,6 +7,8 @@ Sovelluksen tarkoitus on antaa käyttäjän harjoitella monivalintakysymyksillä
   [Määrittelydokumentti](https://github.com/sanikemppainen/ot-harjoitustyo/blob/main/dokumentaatio/M%C3%A4%C3%A4rittelydokumentti.md)
 
   [Harjoitustyöhön käytetyt tunnit](https://github.com/sanikemppainen/ot-harjoitustyo/blob/main/dokumentaatio/tuntikirjanpito.md)
+  
+   [Arkkitehtuuri](https://github.com/sanikemppainen/ot-harjoitustyo/blob/1e0b0cd524cc92335ad43e255511abeb4475e670/dokumentaatio/arkkitehtuuri.md)
  
  ## Komentorivitoiminnot ##
 ### Suoritus
