@@ -54,5 +54,5 @@ Ohjelmaa voisi täydentää näillä ideoilla:
 	Omien kysymyssettien luominengame
 
 
-
-
+## Tällähetkellä toimivat osat ##
+Ohjelmassa toimii uuden käyttäjätunnuksen luominen ja sen tarkistus tietokannasta. Luoduilla tunnuksilla pääseen kirjautumaan sovellukseen ja avaamaan pelimenun jossa on napit kahdelle eri pelille ja näistä voi valita kumpaa pelaa. Molemmat pelit toimivat (näät kysymykset, voit vastata niihin, edetä seuraavaan kysymykseen) ja niiden päätyttyä voi palata takaisin pelimenuun ja näet yksittäisen pelin pisteet. Stats sivu on tehty ja se toimii osittain mutta statsien laskeminen ja tietokantaan tiedon laittaminen/hakeminen on tältä osin vielä kesken. 
