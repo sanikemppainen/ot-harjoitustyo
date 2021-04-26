@@ -22,12 +22,11 @@ Main luokka käynnistää UI:n joka taas luo User ja Functions luokat.
 Tiedot käyttäjistä ja heidän pelien statistiikasta tallennetaan H2 tietokantaan ja luokassa UserDao näitä tietoja tallennetaan, muokataan ja haetaan. Luokissa Quiz2 ja Quiz3 on tallennettuna molemmille peleille tarvittavat kysymykset ja vastaukset.
 
 ## Päätoiminnallisuudet ##
-Sovelluksen toimintalogiikkaa on kuvattuna sekvenssikaaviona:
-![Page2](https://user-images.githubusercontent.com/80842633/116143020-43c98780-a6e3-11eb-9d78-ca36c16469b6.jpg)
 
 
 ### Käyttäjän sisään kirjautuminen ###
 Kun kirjautumisnäkymässä täytetään käyttäjätunnus ja salasana kentät (olettaen että nämä on aiemmin rekisteröity tietokantaan ja ovat siis olemassa) ja painetaan Login nappia sovellus etenee seuraavanlaisesti:
 
+![Page2](https://user-images.githubusercontent.com/80842633/116143020-43c98780-a6e3-11eb-9d78-ca36c16469b6.jpg)
 
 
