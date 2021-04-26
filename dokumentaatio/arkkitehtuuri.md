@@ -4,6 +4,7 @@
 Ohjelma on rakennettu kolmitasoisesti noudattaen kerrosarkkitehtuuria. Tässä on näytetty koodin pakkausrakenne:
 
 
+![Page1](https://user-images.githubusercontent.com/80842633/116143009-40360080-a6e3-11eb-9386-7f8e6050b1d4.jpg)
 
 ## Käyttöliittymä ##
 Käyttöliittymässä on seitsemän erillistä näkymää: kirjautumisnäkymä, uuden käyttäjän rekisteröinti, pelimenu, peli 1, peli 2, peliohi ja statistiikka näkymät. Kaikki nämä on toteutettu omina Scene-olioina jotka on vuorollaan sijoitettu sovelluksen Stageen. Tämä käyttöliittymän rakennus on eriytetty täysin sovelluslogiikasta eli käyttöliittymä kutsuu tarvittaessa opintopiiri.domain luokkien metodeja jotka puolestaan tallentaa ja hakee tietoa opintopiiri.dao luokista.
@@ -22,6 +23,8 @@ Tiedot käyttäjistä ja heidän pelien statistiikasta tallennetaan H2 tietokant
 
 ## Päätoiminnallisuudet ##
 Sovelluksen toimintalogiikkaa on kuvattuna sekvenssikaaviona:
+![Page2](https://user-images.githubusercontent.com/80842633/116143020-43c98780-a6e3-11eb-9d78-ca36c16469b6.jpg)
+
 
 ### Käyttäjän sisään kirjautuminen ###
 Kun kirjautumisnäkymässä täytetään käyttäjätunnus ja salasana kentät (olettaen että nämä on aiemmin rekisteröity tietokantaan ja ovat siis olemassa) ja painetaan Login nappia sovellus etenee seuraavanlaisesti:
