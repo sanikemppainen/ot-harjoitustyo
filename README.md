@@ -27,8 +27,22 @@ Testit suoritetaan opintopiiri kansiossa komennolla
 mvn test
 ```
 
-Testikattavuusraportti luodaan komennolla
+Testikattavuusraportti luodaan opintopiiri kansiossa komennolla
 
 ```
 mvn jacoco:report
 ```
+
+### Suoritettavan jarin generointi
+Komennolla
+
+```
+mvn package
+```
+
+### Checkstyle
+Checkstylen tarkistukset tehdään komennolla
+```
+mvn jxr:jxr checkstyle:checkstyle
+```
+
