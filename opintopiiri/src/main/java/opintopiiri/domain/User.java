@@ -5,20 +5,21 @@ package opintopiiri.domain;
 import java.util.ArrayList;
 
 public class User {
+
     private String username;
     private String password;
-    private int q1noplayed=0;
-    private double q1average=0;
-    private int q2noplayed=0;
-    private double q2average=0;
-    
-    public User(String username, String password, int q1noplayed, double q1average, int q2noplayed, double q2average){
-        this.username=username;
-        this.password=password;
-        this.q1noplayed=q1noplayed;
-        this.q1average=q1average;
-        this.q2noplayed=q2noplayed;
-        this.q2average=q2average;
+    private int q1noplayed = 0;
+    private double q1average = 0;
+    private int q2noplayed = 0;
+    private double q2average = 0;
+
+    public User(String username, String password, int q1noplayed, double q1average, int q2noplayed, double q2average) {
+        this.username = username;
+        this.password = password;
+        this.q1noplayed = q1noplayed;
+        this.q1average = q1average;
+        this.q2noplayed = q2noplayed;
+        this.q2average = q2average;
     }
 
     public String getUsername() {
@@ -48,8 +49,8 @@ public class User {
     public double getQ1average() {
         return q1average;
     }
-    
-    public double calculateQ1average(){
+
+    public double calculateQ1average() {
         return 0.0;
     }
 
@@ -72,9 +73,10 @@ public class User {
     public void setQ2average(double q2average) {
         this.q2average = q2average;
     }
+
     @Override
-    public String toString(){
-        return "User (Username: "+username+", Password: "+password+", Number of times Quiz 1 has been played: "+q1noplayed+", Average % of Quiz 1: "+q1average+", Number of times Quiz 2 has been played: "+q2noplayed+", Average % of Quiz 2: "+q2average+")";
+    public String toString() {
+        return "User (Username: " + username + ", Password: " + password + ", Number of times Quiz 1 has been played: " + q1noplayed + ", Average % of Quiz 1: " + q1average + ", Number of times Quiz 2 has been played: " + q2noplayed + ", Average % of Quiz 2: " + q2average + ")";
     }
-    
+
 }
