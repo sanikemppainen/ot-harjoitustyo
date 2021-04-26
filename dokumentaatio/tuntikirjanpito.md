@@ -9,6 +9,8 @@
 | 13.4  | 6    | GUI ja SQL konfigurointi toisiinsa ja testien tekeminen |
 | 19.4  | 3    | GUI edistys, peliscenejen rakennus |
 | 25.4  | 10   | Ensimmäisen pelin tekeminen loppuun, pelien logiikan nollaus, GUI edistys, stats sivun aloitus|
+| 26.4  | 5    | Database tiedosto korruptoitui, sen korjaus ja edelliseen versioon palaaminen ja koodin uudelleen kirjoittaminen|
 
-Tuntien summa: 33
+
+Tuntien summa: 38
 
