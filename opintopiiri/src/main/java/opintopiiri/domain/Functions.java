@@ -75,8 +75,8 @@ public class Functions {
     public void increasePoints() {
         this.points++;
         this.list.add(points);
-        System.out.println("lisatty pisteet functions metodissa");
-        System.out.println("pisteet: " + this.points);
+        //System.out.println("lisatty pisteet functions metodissa");
+        //System.out.println("pisteet: " + this.points);
 
     }
 
@@ -89,7 +89,7 @@ public class Functions {
     //lisää monta pistettä sai yhdestä pelistä pelin loputtua
     public void addPoints(int no) {
         if (no == 1) {
-            System.out.println("lisätty listalle 1 pisteet");
+            //System.out.println("lisätty listalle 1 pisteet");
             list.add(this.points);
         }
         if (no == 2) {
@@ -125,7 +125,7 @@ public class Functions {
                 total += list.get(i);
                 returnable = total / list.size();
             }
-            System.out.println("laske average 1:" + returnable);
+            //System.out.println("laske average 1:" + returnable);
             return returnable;
         }
         if (no == 2) {

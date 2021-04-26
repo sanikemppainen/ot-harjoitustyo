@@ -250,7 +250,7 @@ public class UI extends Application {
                 this.functions.increasePoints();
             }
             if (!this.functions.checkIfMoreQs()) {
-                System.out.println("sisällä");
+                //System.out.println("sisällä");
                 percentage.setText("You got " + this.functions.getPoints() + "/8 correct!");
                 stage.setScene(gameoverScene);
             }
