@@ -206,16 +206,16 @@ public class Functions {
      */
     public double countAverage(int no) {
         if (no == 1) {
-            System.out.println(this.list.size());
+            //System.out.println(this.list.size());
             
             double returnable = 0;
             double total = 0;
             for (int i = 0; i < this.list.size(); i++) {
                 total += list.get(i);
-                System.out.println(list.get(i));
+                //System.out.println(list.get(i));
                 returnable = total / list.size();
             }
-            System.out.println("laske average 1:" + returnable);
+            //System.out.println("laske average 1:" + returnable);
             return returnable;
         }
         /*if (no == 2) {
