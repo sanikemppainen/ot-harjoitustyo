@@ -1,10 +1,9 @@
 # Käyttöohje
 
 ## Ohjelman käynnistys
-Ohjelma käynnistetään komentoriviltä komennolla:
-
+Voit käynnistää sovelluksen lataamalla src filen ja extractaamalla sen ja sitten menet kansioon target jossa ajat komennon 
 ```
-java -jar opintopiiri.jar
+java -jar opintopiiri-1.0-SNAPSHOT.jar
 ```
 ## Kirjautuminen 
 Ohjelma avaa ensin kirjautumisnäytön johon voit syöttää käyttäjänimen, salasanan ja painaa Login nappia.
