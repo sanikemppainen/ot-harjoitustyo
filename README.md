@@ -10,8 +10,11 @@ Sovelluksen tarkoitus on antaa käyttäjän harjoitella monivalintakysymyksillä
   
    [Arkkitehtuuri](https://github.com/sanikemppainen/ot-harjoitustyo/blob/1e0b0cd524cc92335ad43e255511abeb4475e670/dokumentaatio/arkkitehtuuri.md)
    
+   [Käyttöohje](https://github.com/sanikemppainen/ot-harjoitustyo/blob/main/dokumentaatio/K%C3%A4ytt%C3%B6ohje.md)
+   
 ## Releaset
 [Viikko 5](https://github.com/sanikemppainen/ot-harjoitustyo/releases/tag/viikko5)
+[Viikko 6]()
  
 ## Komentorivitoiminnot ##
 ### Suoritus
