@@ -183,7 +183,7 @@ public class UserDao {
             conn.prepareStatement("SELECT * FROM USERDAO");
             //conn.prepareStatement("CREATE TABLE USERDAO (username char primary key, password char, q1noplayed int, q1average double, q2noplayed int, q2average double)").execute();
         } catch (SQLException e) {
-            System.out.println("SQL Exception in creating table");
+            System.out.println("SQL Exception in creating table"+ e.getErrorCode()+e.getLocalizedMessage());
         }
 
         return conn;
