@@ -10,7 +10,8 @@
 | 19.4  | 3    | GUI edistys, peliscenejen rakennus |
 | 25.4  | 10   | Ensimmäisen pelin tekeminen loppuun, pelien logiikan nollaus, GUI edistys, stats sivun aloitus|
 | 26.4  | 5    | Database tiedosto korruptoitui, sen korjaus ja edelliseen versioon palaaminen ja koodin uudelleen kirjoittaminen|
+| 4.5   | 10    | Toisen Quiz rakennus, quit nappi GUihin, toiminnallisuus joka tarkistaa että vastaukset on a-d, javadoc|
 
 
-Tuntien summa: 38
+Tuntien summa: 48
 
