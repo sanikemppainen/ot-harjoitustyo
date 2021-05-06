@@ -72,7 +72,7 @@ public class UI extends Application {
         //this.userdao.resetH2();
         stage.setTitle("Opintopiiri Sovellus");
 
-        //this.userdao.createConnection();
+        this.userdao.createConnection();
         //loginscene
         Label usernameText = new Label("Username:");
         TextField usernameField = new TextField();

@@ -40,8 +40,6 @@ public class Functions {
         this.q2list = new ArrayList<>();
         
     }
-    ////////
-    //LAITA TOIMIMAAN MUILLEKIN QUIZZES ELIKKÄ PARAMETRIIN MYÖS MIKÄ LISTA JOS KAIKKI LISTAT SAMASSA? VAI ERI LUOKISSA? ERI METODIT ERI LUOKILLE? PARAMETRINA LUOKKA JA IF EHDOT MIHIN LUOKKAAN KYSYTÄÄN
 
     /**
      * checks if the answer is correct
@@ -51,7 +49,6 @@ public class Functions {
     public boolean checkIfAIsCorrect(int i) {
         return true;
     }
-    
 
     /**
      *Gets questions by that index from memory
