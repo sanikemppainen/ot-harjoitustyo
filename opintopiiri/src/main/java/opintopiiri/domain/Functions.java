@@ -43,24 +43,25 @@ public class Functions {
 
     /**
      * checks if the answer is correct
-     * @param i
+     * @param index 
      * @return
      */
-    public boolean checkIfAIsCorrect(int i) {
+   /* public boolean checkIfAIsCorrect(int index) {
         return true;
-    }
+    }*/
 
     /**
      *Gets questions by that index from memory
-     * @return
+     * @param quizNo indicates whether quiz 1 or quiz 2 is played
+     * @return String with the wanted question
      */
-    public String getQ(int q) {
+    public String getQ(int quizNo) {
         index++;
         if (index < 8) {
-            if(q==1){
+            if(quizNo==1){
                 return this.quiz1.getQ(index);
             }
-            if(q==2){
+            if(quizNo==2){
                 return this.quiz2.getQ(index);
             }
         }
@@ -69,14 +70,15 @@ public class Functions {
 
     /**
      *Gets the wanted answer by index
-     * @return
+     * @param quizNo indicates whether quiz 1 or quiz 2 is played
+     * @return String with the wanted question
      */
-    public String getA(int q) {
+    public String getA(int quizNo) {
         indexA++;
         if (indexA < 8) {
-            if (q==1){
+            if (quizNo==1){
                 return this.quiz1.getA(indexA);
-            }if(q==2){
+            }if(quizNo==2){
                 return this.quiz2.getA(indexA);
             }
         }
@@ -85,7 +87,7 @@ public class Functions {
 
     /**
      *Checks if there are questions left to ask
-     * @return
+     * @return true or false value whether there are more questions left
      */
     public boolean checkIfMoreQs() {
         if (index < 8) {
@@ -96,21 +98,20 @@ public class Functions {
     }
 
     /**
-     *Returns the index to zero in order to play the dame again
+     *Resets variables in order to play the dame again
      */
     public void indexToZero() {
         this.index = 0;
         this.indexA = -1;
-        this.list.removeAll(list);
+        //this.list.removeAll(list);
         this.points = 0;
         this.points2=0;
     }
 
-    ////////
 
     /**
      *returns the current index
-     * @return
+     * @return index
      */
     public int getI() {
         return index;
@@ -118,11 +119,12 @@ public class Functions {
 
     /**
      *Increases points
+     * @param quizNo indicates whether quiz 1 or quiz 2 is played
      */
-    public void increasePoints(int q) {
-        if(q==1){
+    public void increasePoints(int quizNo) {
+        if(quizNo==1){
             this.points++;
-        }if(q==2){
+        }if(quizNo==2){
             this.points2++;
         }
         //this.list.add(points);
@@ -132,36 +134,34 @@ public class Functions {
     }
 
     /**
-     *returns how many points there are
-     * @return
+     *returns how many points have been earned
+     * @param quizNo indicates whether quiz 1 or quiz 2 is played
+     * @return number of points for that game
      */
-    public int getPoints(int q) {
+    public int getPoints(int quizNo) {
         //System.out.println("return points"+this.points);
-        if(q==1){
+        if(quizNo==1){
             int pal = (int) this.points;        
             return pal;
-        }if(q==2){
+        }if(quizNo==2){
             int pal= (int) this.points2;
             return pal;
         }
         return 0;
     }
 
-    //lisää monta pistettä sai yhdestä pelistä pelin loputtua
-
     /**
-     *Adds earned points to a list 
-     * @param no
+     *Adds earned points to a list
+     * @param quizNo indicates whether quiz 1 or quiz 2 is played
      */
-    public void addPoints(int no) {
-        if (no == 1) {
+    public void addPoints(int quizNo) {
+        if (quizNo == 1) {
             //System.out.println("lisätty listalle 1 pisteet");
             list.add(this.points);
             //System.out.println("listalle 1 pisteet lisätty: "+this.points);
             //System.out.println(list.size());
-            
         }
-        if (no == 2) {
+        if (quizNo == 2) {
             q2list.add(this.points2);
         }
 
@@ -169,28 +169,27 @@ public class Functions {
 
     /**
      *Increases how many times a game has been played
-     * @param no
+     * @param quizNo indicates whether quiz 1 or quiz 2 is played
      */
-    public void addNoOfTimesPlayed(int no) {
-        if (no == 1) {
+    public void addNoOfTimesPlayed(int quizNo) {
+        if (quizNo == 1) {
             q1no++;
         }
-        if (no == 2) {
+        if (quizNo == 2) {
             q2no++;
         }
-        
     }
 
     /**
      *returns how many times a game has been played
-     * @param no
-     * @return
+     * @param quizNo indicates whether quiz 1 or quiz 2 is played
+     * @return number of times played by game
      */
-    public int noOfTimesPlayed(int no) {
-        if (no == 1) {
+    public int noOfTimesPlayed(int quizNo) {
+        if (quizNo == 1) {
             return q1no;
         }
-        if (no == 2) {
+        if (quizNo == 2) {
             return q2no;
         }
         return 0;
@@ -198,32 +197,29 @@ public class Functions {
 
     /**
      *Counts average points of that game
-     * @param no
-     * @return
+     * @param quizNo indicates whether quiz 1 or quiz 2 is played
+     * @return average for that game 
      */
-    public double countAverage(int no) {
-        if (no == 1) {
-            //System.out.println(this.list.size());
-            
+    public double countAverage(int quizNo) {
+        if (quizNo == 1) {
             double returnable = 0;
             double total = 0;
             for (int i = 0; i < this.list.size(); i++) {
                 total += list.get(i);
-                //System.out.println(list.get(i));
                 returnable = total / list.size();
             }
-            //System.out.println("laske average 1:" + returnable);
             return returnable;
         }
-        /*if (no == 2) {
-            Double returnable = q2list.stream()
-                    .mapToDouble(i -> i)
-                    .average().orElse(0.0);
+        if (quizNo == 2) {
+            double returnable = 0;
+            double total = 0;
+            for (int i = 0; i < this.q2list.size(); i++) {
+                total += q2list.get(i);
+                returnable = total / q2list.size();
+            }
             return returnable;
-
-        }*/
-
-        return 0.0;
+        }
+        return 8.8;
     }
 
     /**

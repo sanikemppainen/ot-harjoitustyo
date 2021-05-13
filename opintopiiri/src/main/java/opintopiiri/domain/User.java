@@ -2,8 +2,6 @@
 //hae tällä yksittäisellä userdaosta
 package opintopiiri.domain;
 
-import java.util.ArrayList;
-
 /**
  *Information on one user
  * @author ksani

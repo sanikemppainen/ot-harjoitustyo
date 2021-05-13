@@ -12,7 +12,7 @@ public class Quiz1 {
     ArrayList<String> alist = new ArrayList<>();
 
     /**
-     *Constructor adds q and a to lists
+     *Constructor adds questions and answers to lists
      */
     public Quiz1() {
         qlist.add("What kind of fish is Nemo in the movie 'Finding Nemo'?" + "\n" + "a:Tiger Shark " + "\n" + "b:Salmon " + "\n" + "c:Clownfish " + "\n" + "d: Goldfish");
@@ -34,30 +34,29 @@ public class Quiz1 {
         alist.add("b");
     }
 
-    //PARAMETREIKSI MITKÄLISTAT HALUAA, INT MIKÄ LISTA 1 2 VAI 3
-
     /**
      *returns a question based on index
-     * @param i
+     * 
+     * @param index refers to the index in which the question is in
      * @return
      */ 
-    public String getQ(int i) {
-        return this.qlist.get(i);
+    public String getQ(int index) {
+        return this.qlist.get(index);
 
     }
 
     /**
      *returns an answer based on index
-     * @param i
+     * @param index refers to the index in which the answer is in
      * @return
      */
-    public String getA(int i) {
-        return alist.get(i);
+    public String getA(int index) {
+        return alist.get(index);
     }
 
     /**
      *return length of question list
-     * @return
+     * @return list's length
      */
     public int getLength() {
         return this.qlist.size();

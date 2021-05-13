@@ -158,13 +158,7 @@ public class opintopiiriTest {
     /**
      *
      */
-    @Test
-    public void setA() {
-        functions.getA(1);
-        functions.checkIfAIsCorrect(1);
-        assertEquals("I: 0, Points: 0.0, IA: 0, q1no: 0, q2no: 0", functions.toString());
-
-    }
+   
     @Test
     public void setIndexToZero(){
         functions.indexToZero();
@@ -172,6 +166,9 @@ public class opintopiiriTest {
 
     }
     
+    /**
+     *
+     */
     @Test
     public void checkIfAddsNoTimesPlayed1(){
         //functions.getPoints();
@@ -183,6 +180,10 @@ public class opintopiiriTest {
         assertEquals("I: 0, Points: 0.0, IA: -1, q1no: 3, q2no: 0", functions.toString());
 
     }
+
+    /**
+     *
+     */
     @Test
     public void checkIfAddsNoTimesPlayed2(){
         

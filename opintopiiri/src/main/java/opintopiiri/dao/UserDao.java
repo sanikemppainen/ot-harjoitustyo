@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- *Code to add, update and build from database
+ *Builds, adds to, updates and pulls data from database
  * @author ksani
  */
 public class UserDao {
@@ -17,7 +17,7 @@ public class UserDao {
 
     /**
      *constructor
-     * @param user
+     * @param user indicates which user's data from the database is modified
      */
     public UserDao(User user) {
         this.user = user;
@@ -25,15 +25,16 @@ public class UserDao {
     }
 
     /**
-     *Adds user to database
-     * @param user
-     * @throws SQLException
+     *Adds user to the database
+     * @param user is the given user 
+     * @throws SQLException if user is not added correctly
      */
     public void addUser(User user) throws SQLException {
         try (Connection connection = createConnection()) {
             PreparedStatement statement = connection.prepareStatement("INSERT INTO USERDAO (username, password, q1noplayed, q1average, q2noplayed, q2average) VALUES (?,?,0,0,0,0)");
             statement.setString(1, user.getUsername());
             statement.setString(2, user.getPassword());
+            //NÄMÄ EI TOIMI!
             /*statement.setInt(3, user.getQ1noplayed());
             statement.setDouble(4, user.getQ1average());
             statement.setInt(5, user.getQ2noplayed());
@@ -47,9 +48,9 @@ public class UserDao {
 
     /**
      *checks if user exists
-     * @param username
-     * @return
-     * @throws SQLException
+     * @param username is the given username by which data is checked
+     * @return boolean value of found: true, if not: false
+     * @throws SQLException if cannot check if user exists
      */
     public boolean checkIfUserExists(String username) throws SQLException {
         try (Connection connection = createConnection()) {
@@ -57,7 +58,6 @@ public class UserDao {
             statement.setString(1, username);
             ResultSet result = statement.executeQuery();
             while (result.next()) {
-                //dbssä on jo sen niminen
                 return true;
             }
         } catch (SQLException e) {
@@ -68,11 +68,11 @@ public class UserDao {
     }
 
     /**
-     *checks if login info is correct from database
-     * @param username
-     * @param password
-     * @return
-     * @throws SQLException
+     *checks if login data is correct from database
+     * @param username given username
+     * @param password given password
+     * @return boolean value of true or false
+     * @throws SQLException if cannot check whether the user exists
      */
     public boolean checkIfUsernameMatchesPassword(String username, String password) throws SQLException {
         try (Connection connection = createConnection()) {
@@ -81,7 +81,6 @@ public class UserDao {
             statement.setString(2, password);
             ResultSet result = statement.executeQuery();
             if (result.next()) {
-                //dbssä on matchaavat username ja password
                 return true;
             }
         } catch (SQLException e) {
@@ -91,9 +90,9 @@ public class UserDao {
     }
 
     /**
-     *increases number of times 1 game has been played
-     * @param username
-     * @throws SQLException
+     *Increases number of times 1 game has been played
+     * @param username is the player's name in the database
+     * @throws SQLException if cannot check this stat
      */
     public void increaseQ1NoPlayed(String username) throws SQLException {
         try (Connection connection = createConnection()) {
@@ -107,9 +106,9 @@ public class UserDao {
     }
 
     /**
-     *increases number of times 2 game has been played
-     * @param username
-     * @throws SQLException
+     *Increases number of times 2 game has been played
+     * @param username given
+     * @throws SQLException if cannot check this stat
      */
     public void increaseQ2NoPlayed(String username) throws SQLException {
         try (Connection connection = createConnection()) {
@@ -123,10 +122,10 @@ public class UserDao {
     }
 
     /**
-     *updates game 1 average
-     * @param average
-     * @param username
-     * @throws SQLException
+     *Updates game 1 average
+     * @param average given to database after each game
+     * @param username is the player's name in the database
+     * @throws SQLException if cannot update game 1 average score
      */
     public void updateQ1average(Double average, String username) throws SQLException {
         try (Connection connection = createConnection()) {
@@ -136,55 +135,50 @@ public class UserDao {
             statement.executeUpdate();
 
         } catch (SQLException e) {
-            System.out.println("SQL Exception in ");
+            System.out.println("SQL Exception in updating game 1 average score");
         }
     }
 
     /**
      *updates game 2 average
-     * @param username
-     * @throws SQLException
+     * @param average given to database after each game
+     * @param username is the player's name in the database
+     * @throws SQLException if cannot update game 2 average score
      */
-    public void updateQ2average(String username) throws SQLException {
+    public void updateQ2average(Double average, String username) throws SQLException {
         try (Connection connection = createConnection()) {
-            PreparedStatement statement = connection.prepareStatement("UPDATE USERDAO SET q1average = ? WHERE username = ? ");
+            PreparedStatement statement = connection.prepareStatement("UPDATE USERDAO SET q2average = ? WHERE username = ? ");
+            statement.setDouble(1, average);
             statement.setString(1, username);
             statement.executeUpdate();
 
         } catch (SQLException e) {
-            System.out.println("SQL Exception in ");
+            System.out.println("SQL Exception in updating game 2 average score");
         }
     }
 
     /**
      *resets database
+     * @throws java.sql.SQLException if cannot reset the database table
      */
-    public void resetH2() {
+    public void resetH2() throws SQLException{
         try (Connection connection = createConnection()) {
             PreparedStatement statement = connection.prepareStatement("TRUNCATE TABLE USERDAO");
             statement.executeUpdate();
 
         } catch (SQLException e) {
-            System.out.println("SQL Exception in resetting table");
+            System.out.println("SQL Exception in resetting the database table");
         }
     }
 
     /**
-     *creates conncetion to database
-     * @return
+     *create a connection to database
+     * @return connection
      * @throws SQLException
      */
     public Connection createConnection() throws SQLException {
-
         Connection conn = DriverManager.getConnection("jdbc:h2:./userdao", "sa", "");
-
-        try {
-            //System.out.println("Yhteys luotu");
-            conn.prepareStatement("SELECT * FROM USERDAO");
-            //conn.prepareStatement("CREATE TABLE USERDAO (username char primary key, password char, q1noplayed int, q1average double, q2noplayed int, q2average double)").execute();
-        } catch (SQLException e) {
-            System.out.println("SQL Exception in creating table"+ e.getErrorCode()+e.getLocalizedMessage());
-        }
+        conn.prepareStatement("CREATE TABLE IF NOT EXISTS USERDAO (username char primary key, password char, q1noplayed int, q1average double, q2noplayed int, q2average double)").execute();
 
         return conn;
     }

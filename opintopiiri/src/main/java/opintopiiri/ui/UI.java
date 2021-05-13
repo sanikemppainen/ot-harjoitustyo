@@ -21,22 +21,12 @@ import opintopiiri.dao.Quiz1;
 import opintopiiri.dao.Quiz2;
 
 /**
- *UI builds the user interface and uses Fucntions method to do wanted functions
- * @author ksani
+ *UI builds the user interface and uses Functions method to do wanted functions
+ * @author ksani 
  */
 public class UI extends Application {
 
     Functions functions = new Functions(this);
-    /*Button registerButton= new Button();
-    Button loginButton= new Button();
-    Label registerErrorLabel= new Label();
-    Label errorLabel= new Label();
-    TextField usernameField= new TextField();
-    PasswordField passwordField= new PasswordField();
-    TextField newUsernameField= new TextField();
-    PasswordField newPasswordField= new PasswordField();
-    Button createNew=new Button();
-    Button returnToLogin=new Button();*/
     UserDao userdao;
     Quiz1 quiz1;
     Quiz2 quiz2;
@@ -331,7 +321,7 @@ public class UI extends Application {
                 stage.setScene(gameoverScene);
                 this.functions.addNoOfTimesPlayed(2);
                 this.functions.addPoints(2);
-                //this.functions.countAverage(2);
+                this.functions.countAverage(2);
             }
             answer2.setText("");
         });
@@ -340,6 +330,8 @@ public class UI extends Application {
         //palaa menuun 1 scenestä
         goBackToMenu.setOnAction((event) -> {
                 this.functions.indexToZero();
+                invalidAnswer.setText("");
+                invalidAnswer2.setText("");
                 question.setText("What kind of fish is Nemo in the movie 'Finding Nemo'?" + "\n" + "a:Tiger Shark " + "\n" + "b:Salmon " + "\n" + "c:Clownfish " + "\n" + "d: Goldfish");
                 stage.setScene(gamemenuScene);
                        

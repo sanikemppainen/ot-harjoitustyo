@@ -43,26 +43,26 @@ public class Quiz2 {
 
     /**
      *returns a question based on index
-     * @param i
+     * @param index refers to in which index the question is in
      * @return
      */ 
-    public String getQ(int i) {
-        return this.qlist2.get(i);
+    public String getQ(int index) {
+        return this.qlist2.get(index);
 
     }
 
     /**
      *returns an answer based on index
-     * @param i
+     * @param index refers to in which index the question is in
      * @return
      */
-    public String getA(int i) {
-        return alist2.get(i);
+    public String getA(int index) {
+        return alist2.get(index);
     }
 
     /**
      *return length of question list
-     * @return
+     * @return length of list
      */
     public int getLength() {
         return this.qlist2.size();
