@@ -1,7 +1,7 @@
 # Käyttöohje
 
 ## Ohjelman käynnistys
-Voit käynnistää sovelluksen lataamalla viimeisimmän releasen [src tiedoston](https://github.com/sanikemppainen/ot-harjoitustyo/releases/tag/viikko7) joka sitten tulee purkaa. Sitten avaa kansio opintopiiri komentoriviltä jossa voit luoda käskyllä:
+Voit käynnistää sovelluksen lataamalla viimeisimmän releasen [source code nimisen tiedoston](https://github.com/sanikemppainen/ot-harjoitustyo/releases/tag/viikko7) joka sitten tulee purkaa. Sitten avaa kansio opintopiiri komentoriviltä jossa voit luoda käskyllä:
 ```
 mvn package
 ```
