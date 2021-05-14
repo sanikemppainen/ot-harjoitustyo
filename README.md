@@ -1,6 +1,6 @@
 # OPINTOPIIRI SOVELLUS #
 
-Sovelluksen tarkoitus on antaa käyttäjän harjoitella monivalintakysymyksillä tietyn aihepiirin tietoja. Sovellus pitää yllä tietokantaa eri käyttäjistä ja näiden käyttäjien pelien datasta, kuten mitä peliä on pelattu eniten ja minkä pelin onnistumisprosentti on pienin. 
+Sovelluksen tarkoitus on antaa käyttäjän pelata eri monivalintakysymyspelejä. Sovellus pitää yllä tietokantaa eri käyttäjistä ja näyttää pelaajalle peleistä kerättyä dataa, kuten monesti mitäkin peliä on pelattu ja mikä on keskiverto tulos jokaisesta pelistä.
 
 ## Dokumentaatio ## 
 
@@ -12,9 +12,14 @@ Sovelluksen tarkoitus on antaa käyttäjän harjoitella monivalintakysymyksillä
    
    [Käyttöohje](https://github.com/sanikemppainen/ot-harjoitustyo/blob/main/dokumentaatio/K%C3%A4ytt%C3%B6ohje.md)
    
+   [Testausdokumentti]()
+
+
 ## Releaset
 [Viikko 5](https://github.com/sanikemppainen/ot-harjoitustyo/releases/tag/viikko5)
-[Viikko 6]()
+
+[Viikko 6](https://github.com/sanikemppainen/ot-harjoitustyo/releases/tag/viikko6)
+
  
 ## Komentorivitoiminnot ##
 ### Suoritus
@@ -40,10 +45,17 @@ mvn jacoco:report
 ```
 
 ### Suoritettavan jarin generointi
-Komennolla
+Opintopiiri kansiosta komennolla
 
 ```
 mvn package
+```
+
+### JavaDoc
+JavaDocin saa generoitua komennolla
+
+```
+mvn javadoc:javadoc
 ```
 
 ### Checkstyle
@@ -51,4 +63,4 @@ Checkstylen tarkistukset tehdään komennolla
 ```
 mvn jxr:jxr checkstyle:checkstyle
 ```
-
+Virheilmoitukset voi selvittää avaamalla target kansioon luodun /site/checkstyle.html tiedoston selaimella.

@@ -1,7 +1,8 @@
 # Käyttöohje
 
 ## Ohjelman käynnistys
-Voit käynnistää sovelluksen lataamalla src filen ja extractaamalla sen ja sitten menet kansioon target jossa ajat komennon 
+Voit käynnistää sovelluksen lataamalla viimeisimmän releasen [jar tiedoston](https://github.com/sanikemppainen/ot-harjoitustyo/releases/tag/viikko7) joka sitten tulee purkaa.
+Ohjelman voi käynnistää komennolla:
 ```
 java -jar opintopiiri-1.0-SNAPSHOT.jar
 ```
@@ -35,10 +36,11 @@ Pelinäkymä ilmoittaa jos yrität syöttää epäkelvon vastauksen.
 ## Peli ohi näkymä
 Pelin kysymysten loputtua saavut 'peli ohi' näkymään jossa näkyy yhteenveto ansaituista pisteistä. Voit palata pelimenuun 'Go back to menu' napista. 
 
-![gameover](https://user-images.githubusercontent.com/80842633/117018309-0c6b6400-acfd-11eb-9f04-3a178e77f9a3.png)![Uploading stats.png…]()
+![gameover](https://user-images.githubusercontent.com/80842633/117018309-0c6b6400-acfd-11eb-9f04-3a178e77f9a3.png)
 
 ## Stats näkymä
 Täällä näät monestikko olet pelannut mitäkin peliä ja mikä on keskiverto pistesi kummastakin pelistä. Voit palata pelimenuun.
-![gameover](https://user-images.githubusercontent.com/80842633/117018309-0c6b6400-acfd-11eb-9f04-3a178e77f9a3.png)
+![gameover](https://user-images.githubusercontent.com/80842633/118287530-329eba00-b4dc-11eb-987b-985a3953a0d5.png)
+)
 
 Voit sammuttaa pelin joko pelimenun Quit napista tai milloin vain punaisesta rastista. 
