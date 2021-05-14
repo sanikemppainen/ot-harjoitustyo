@@ -329,6 +329,7 @@ public class UI extends Application {
                 invalidAnswer.setText("");
                 invalidAnswer2.setText("");
                 question.setText("What kind of fish is Nemo in the movie 'Finding Nemo'?" + "\n" + "a:Tiger Shark " + "\n" + "b:Salmon " + "\n" + "c:Clownfish " + "\n" + "d: Goldfish");
+                question2.setText("On which continent have the most dinosaur fossils been found?  " + "\n" + "a:Europe " + "\n" + "b:North America " + "\n" + "c:Africa " + "\n" + "d: Asia");
                 stage.setScene(gamemenuScene);
                        
         });
