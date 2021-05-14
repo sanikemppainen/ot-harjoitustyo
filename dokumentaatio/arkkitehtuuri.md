@@ -5,12 +5,13 @@ Ohjelma on rakennettu kolmitasoisesti noudattaen kerrosarkkitehtuuria. Tässä o
 
 
 ![Page1](https://user-images.githubusercontent.com/80842633/116143009-40360080-a6e3-11eb-9386-7f8e6050b1d4.jpg)
+Opintopiiri.domain sisältää Functions ja User luokat, opintopiiri.ui sisältää käyttöliittymän sisältävän luokan Ui ja opintopiiri.dao sisältää UserDao, Quiz1 ja Quiz2 luokat.
 
 ## Käyttöliittymä ##
-Käyttöliittymässä on seitsemän erillistä näkymää: kirjautumisnäkymä, uuden käyttäjän rekisteröinti, pelimenu, peli 1, peli 2, peliohi ja statistiikka näkymät. Kaikki nämä on toteutettu omina Scene-olioina jotka on vuorollaan sijoitettu sovelluksen Stageen. Tämä käyttöliittymän rakennus on eriytetty täysin sovelluslogiikasta eli käyttöliittymä kutsuu tarvittaessa opintopiiri.domain luokkien metodeja jotka puolestaan tallentaa ja hakee tietoa opintopiiri.dao luokista.
+Käyttöliittymässä on seitsemän erillistä näkymää: kirjautumisnäkymä, uuden käyttäjän rekisteröinti, pelimenu, peli 1, peli 2, peli ohi ja statistiikka näkymät. Kaikki nämä on toteutettu omina Scene-olioina jotka on vuorollaan sijoitettu sovelluksen Stageen. Tämä käyttöliittymän rakennus on eriytetty täysin sovelluslogiikasta eli käyttöliittymä kutsuu tarvittaessa opintopiiri.domain luokkien metodeja jotka puolestaan tallentaa ja hakee tietoa opintopiiri.dao luokista.
 
 ## Sovelluslogiikka ##
-Sovelluslogiikan muodostaa luokat Main, Functions ja User jotka kuvaa käyttäjiä ja pelin pelaamiseen tarvittavia tehtäviä. 
+Sovelluslogiikan muodostaa luokat Functions ja User jotka kuvaa käyttäjiä ja pelin pelaamiseen tarvittavia tehtäviä. 
 
 User luokka tarjoaa mahdollisuuden luoda uuden käyttäjän syöttämällä tietokantaan uuden käyttäjän tiedot (käyttäjänimi, salasana, monestikko 1 ja 2 pelejä on pelattu ja mitkä niiden keskiarvo pisteet ovat) ja tarvittaessa muokata ja hakea näitä tietoja tietokannasta.
 
