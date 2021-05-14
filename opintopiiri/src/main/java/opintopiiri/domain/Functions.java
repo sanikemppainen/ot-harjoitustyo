@@ -42,15 +42,6 @@ public class Functions {
     }
 
     /**
-     * checks if the answer is correct
-     * @param index 
-     * @return
-     */
-   /* public boolean checkIfAIsCorrect(int index) {
-        return true;
-    }*/
-
-    /**
      *Gets questions by that index from memory
      * @param quizNo indicates whether quiz 1 or quiz 2 is played
      * @return String with the wanted question
@@ -127,10 +118,6 @@ public class Functions {
         }if(quizNo==2){
             this.points2++;
         }
-        //this.list.add(points);
-        //System.out.println("lisatty pisteet functions metodissa");
-        //System.out.println("pisteet: " + this.points);
-
     }
 
     /**
@@ -156,10 +143,7 @@ public class Functions {
      */
     public void addPoints(int quizNo) {
         if (quizNo == 1) {
-            //System.out.println("lisätty listalle 1 pisteet");
             list.add(this.points);
-            //System.out.println("listalle 1 pisteet lisätty: "+this.points);
-            //System.out.println(list.size());
         }
         if (quizNo == 2) {
             q2list.add(this.points2);
@@ -227,6 +211,6 @@ public class Functions {
      * @return
      */
     public String toString() {
-        return "I: " + this.index + ", Points: " + this.points + ", IA: " + this.indexA + ", q1no: " + this.q1no + ", q2no: "+this.q2no;
+        return this.index+" "+this.indexA+" "+this.points+" "+this.points2+" "+this.q1no+" "+this.q2no;
     }
 }

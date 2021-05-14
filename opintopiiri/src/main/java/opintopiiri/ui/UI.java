@@ -10,7 +10,6 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
-import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -32,10 +31,6 @@ public class UI extends Application {
     Quiz2 quiz2;
     String username;
     String password;
-    int q1noplayed;
-    double q1average;
-    int q2noplayed;
-    double q2average;
     String answerTrimmed;
     private int i;
 
@@ -43,7 +38,8 @@ public class UI extends Application {
      *UI constructor
      */
     public UI() {
-        this.userdao = new UserDao(new User(username, password, q1noplayed, q1average, q2noplayed, q2average));
+        
+        this.userdao = new UserDao(new User(username, password));
         this.quiz1 = new Quiz1();
         this.quiz2 = new Quiz2();
         this.i = 0;
@@ -258,7 +254,7 @@ public class UI extends Application {
 
                 } else {
                     //System.out.println("ei ole db uutta käyttäjää vielä");
-                    this.userdao.addUser(new User(username, password, 0, 0, 0, 0));
+                    this.userdao.addUser(new User(username, password));
                     registerErrorLabel.setText("New user created!");
                 }
 
