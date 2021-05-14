@@ -1,11 +1,8 @@
 # Käyttöohje
 
 ## Ohjelman käynnistys
-Voit käynnistää sovelluksen lataamalla viimeisimmän releasen [source code nimisen tiedoston](https://github.com/sanikemppainen/ot-harjoitustyo/releases/tag/viikko7) joka sitten tulee purkaa. Sitten avaa kansio opintopiiri komentoriviltä jossa voit luoda käskyllä:
-```
-mvn package
-```
-jar tiedoston jonka voit sitten ajaa menemällä target kansioon ja ajamalla käskyn:
+Voit käynnistää sovelluksen lataamalla viimeisimmän releasen [jar tiedoston](https://github.com/sanikemppainen/ot-harjoitustyo/releases/tag/viikko7) joka sitten tulee purkaa.
+Ohjelman voi käynnistää komennolla:
 ```
 java -jar opintopiiri-1.0-SNAPSHOT.jar
 ```
