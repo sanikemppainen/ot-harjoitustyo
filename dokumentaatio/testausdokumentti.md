@@ -12,8 +12,8 @@ Osa testeistä testaa useiden luokkien tai metodien yhteistoimintaa. Esimerkiksi
 
 
 ## Testauskattavuus
-Sovelluksen rivikattavuus on 93% ja haarautumiskattavuus on 84%. Käyttöliittymä ei ole huomioitu näissä testeissä.
-![jacoco](https://user-images.githubusercontent.com/80842633/118359737-9634f000-b58d-11eb-885b-f1f052b3b661.png)
+Sovelluksen rivikattavuus on 91% ja haarautumiskattavuus on 76%. Käyttöliittymä ei ole huomioitu näissä testeissä.
+![opintopiiritestit](https://user-images.githubusercontent.com/80842633/118362912-7bb54380-b59a-11eb-9f61-c5c01cdc8137.png)
 
 ## Järjestelmätestaus
 Sovellusta on testattu manuaalisesti niin Linux kuin OSX käyttöjärjestelmillä. Kaikki [määrittelydokumentin](https://github.com/sanikemppainen/ot-harjoitustyo/blob/main/dokumentaatio/M%C3%A4%C3%A4rittelydokumentti.md) listaamat toiminnalisuudet on testattu läpi ja ne toimivat. 
