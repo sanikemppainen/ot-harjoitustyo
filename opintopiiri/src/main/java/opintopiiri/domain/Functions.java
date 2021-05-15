@@ -200,8 +200,7 @@ public class Functions {
      */
     public double countAverage(int quizNo) {
         if (quizNo == 1) {
-            double returnable = 0;
-            double total = 0;
+            double returnable = 0, total = 0;
             for (int i = 0; i < this.list.size(); i++) {
                 total += list.get(i);
                 returnable = total / list.size();
