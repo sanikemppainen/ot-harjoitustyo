@@ -1,7 +1,7 @@
 # Käyttöohje
 
 ## Ohjelman käynnistys
-Voit käynnistää sovelluksen lataamalla viimeisimmän releasen [jar tiedoston](https://github.com/sanikemppainen/ot-harjoitustyo/releases/tag/final) joka sitten tulee purkaa.
+Voit käynnistää sovelluksen lataamalla viimeisimmän releasen [jar tiedoston](https://github.com/sanikemppainen/ot-harjoitustyo/releases/tag/final1.1) joka sitten tulee purkaa.
 Ohjelman voi käynnistää komennolla:
 ```
 java -jar opintopiiri-1.0-SNAPSHOT.jar
