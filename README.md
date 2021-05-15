@@ -12,7 +12,7 @@ Sovelluksen tarkoitus on antaa käyttäjän pelata eri monivalintakysymyspelejä
    
    [Käyttöohje](https://github.com/sanikemppainen/ot-harjoitustyo/blob/main/dokumentaatio/K%C3%A4ytt%C3%B6ohje.md)
    
-   [Testausdokumentti]()
+   [Testausdokumentti](https://github.com/sanikemppainen/ot-harjoitustyo/blob/main/dokumentaatio/testausdokumentti.md)
 
 
 ## Releaset
@@ -20,6 +20,7 @@ Sovelluksen tarkoitus on antaa käyttäjän pelata eri monivalintakysymyspelejä
 
 [Viikko 6](https://github.com/sanikemppainen/ot-harjoitustyo/releases/tag/viikko6)
 
+[Lopullinen versio 1.0]()
  
 ## Komentorivitoiminnot ##
 ### Suoritus
@@ -38,7 +39,7 @@ Testit suoritetaan opintopiiri kansiossa komennolla
 mvn test
 ```
 
-Testikattavuusraportti luodaan opintopiiri kansiossa komennolla
+Testikattavuusraportti luodaan opintopiiri kansiossa komennolla ja sitä voidaan tarkastella selaimella osoitteesta target/site/jacoco/index.html 
 
 ```
 mvn jacoco:report
@@ -63,4 +64,4 @@ Checkstylen tarkistukset tehdään komennolla
 ```
 mvn jxr:jxr checkstyle:checkstyle
 ```
-Virheilmoitukset voi selvittää avaamalla target kansioon luodun /site/checkstyle.html tiedoston selaimella.
+Virheilmoitukset voi selvittää avaamalla luodun target/site/checkstyle.html tiedoston selaimella.
