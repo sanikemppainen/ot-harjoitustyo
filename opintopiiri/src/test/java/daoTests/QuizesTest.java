@@ -19,15 +19,17 @@ import opintopiiri.dao.Quiz2;
  * @author ksani
  */
 public class QuizesTest {
+
     @Test
-    public void testLengthOfQuiz1(){
+    public void testLengthOfQuiz1() {
         Quiz1 quiz1 = new Quiz1();
         assertEquals(quiz1.getLength(), 8);
     }
+
     @Test
-    public void testLengthOfQuiz2(){
+    public void testLengthOfQuiz2() {
         Quiz2 quiz2 = new Quiz2();
         assertEquals(quiz2.getLength(), 8);
     }
-   
+
 }

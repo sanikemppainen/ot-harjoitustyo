@@ -8,7 +8,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- *Builds, adds to, updates and pulls data from database
+ * Builds, adds to, updates and pulls data from database
+ *
  * @author ksani
  */
 public class UserDao {
@@ -16,7 +17,8 @@ public class UserDao {
     User user;
 
     /**
-     *constructor
+     * constructor
+     *
      * @param user indicates which user's data from the database is modified
      */
     public UserDao(User user) {
@@ -25,12 +27,13 @@ public class UserDao {
     }
 
     /**
-     *Adds user to the database
-     * @param user is the given user 
+     * Adds user to the database
+     *
+     * @param user is the given user
      * @throws SQLException if user is not added correctly
      */
     public void addUser(User user) throws SQLException {
-        try (Connection connection = createConnection()) {
+        try ( Connection connection = createConnection()) {
             PreparedStatement statement = connection.prepareStatement("INSERT INTO USERDAO (username, password, q1noplayed, q1average, q2noplayed, q2average) VALUES (?,?,0,0,0,0)");
             statement.setString(1, user.getUsername());
             statement.setString(2, user.getPassword());
@@ -42,13 +45,14 @@ public class UserDao {
     }
 
     /**
-     *checks if user exists
+     * checks if user exists
+     *
      * @param username is the given username by which data is checked
      * @return boolea value of found: true, if not: false
      * @throws SQLException if cannot check if user exists
      */
     public boolean checkIfUserExists(String username) throws SQLException {
-        try (Connection connection = createConnection()) {
+        try ( Connection connection = createConnection()) {
             PreparedStatement statement = connection.prepareStatement("SELECT username FROM USERDAO WHERE username = ?");
             statement.setString(1, username);
             ResultSet result = statement.executeQuery();
@@ -63,14 +67,15 @@ public class UserDao {
     }
 
     /**
-     *checks if login data is correct from database
+     * checks if login data is correct from database
+     *
      * @param username given username
      * @param password given password
      * @return boolea value of true or false
      * @throws SQLException if cannot check whether the user exists
      */
     public boolean checkIfUsernameMatchesPassword(String username, String password) throws SQLException {
-        try (Connection connection = createConnection()) {
+        try ( Connection connection = createConnection()) {
             PreparedStatement statement = connection.prepareStatement("SELECT username FROM USERDAO WHERE username = ? AND password = ?");
             statement.setString(1, username);
             statement.setString(2, password);
@@ -85,7 +90,8 @@ public class UserDao {
     }
 
     /**
-     *create a connection to database
+     * create a connection to database
+     *
      * @return connection
      * @throws SQLException
      */
@@ -97,7 +103,8 @@ public class UserDao {
     }
 
     /**
-     *returns string to class
+     * returns string to class
+     *
      * @return
      */
     @Override

@@ -3,16 +3,18 @@
 package opintopiiri.domain;
 
 /**
- *Information on one user
+ * Information on one user
+ *
  * @author ksani
  */
 public class User {
-    
+
     private String username;
     private String password;
 
     /**
-     *constructor
+     * constructor
+     *
      * @param username
      * @param password
      */
@@ -53,14 +55,13 @@ public class User {
         this.password = password;
     }
 
-
     /**
      *
      * @return
      */
     @Override
     public String toString() {
-        return this.username+" "+this.password;
+        return this.username + " " + this.password;
     }
 
 }

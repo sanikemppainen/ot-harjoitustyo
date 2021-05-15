@@ -20,8 +20,9 @@ import opintopiiri.dao.Quiz1;
 import opintopiiri.dao.Quiz2;
 
 /**
- *UI builds the user interface and uses Functions method to do wanted functions
- * @author ksani 
+ * UI builds the user interface and uses Functions method to do wanted functions
+ *
+ * @author ksani
  */
 public class UI extends Application {
 
@@ -35,10 +36,10 @@ public class UI extends Application {
     private int i;
 
     /**
-     *UI constructor
+     * UI constructor
      */
     public UI() {
-        
+
         this.userdao = new UserDao(new User(username, password));
         this.quiz1 = new Quiz1();
         this.quiz2 = new Quiz2();
@@ -47,7 +48,8 @@ public class UI extends Application {
     }
 
     /**
-     *Starts the user interface application and builds it
+     * Starts the user interface application and builds it
+     *
      * @param stage
      * @throws SQLException
      * @throws ClassNotFoundException
@@ -117,7 +119,7 @@ public class UI extends Application {
         Button quiz1 = new Button("Quiz 1: Fish");
         Button quiz2 = new Button("Quiz 2: Dinosaurs");
         Button seeStats = new Button("See stats");
-        Button quit= new Button("Quit");
+        Button quit = new Button("Quit");
 
         GridPane gamemenu = new GridPane();
         gamemenu.setPrefSize(800, 500);
@@ -130,7 +132,7 @@ public class UI extends Application {
         gamemenu.add(quiz1, 1, 0);
         gamemenu.add(quiz2, 2, 0);
         gamemenu.add(seeStats, 4, 0);
-        gamemenu.add(quit,4,1);
+        gamemenu.add(quit, 4, 1);
 
         Scene gamemenuScene = new Scene(gamemenu);
 
@@ -139,8 +141,7 @@ public class UI extends Application {
         Label question = new Label("What kind of fish is Nemo in the movie 'Finding Nemo'?" + "\n" + "a:Tiger Shark " + "\n" + "b:Salmon " + "\n" + "c:Clownfish " + "\n" + "d: Goldfish");
         TextField answer = new TextField();
         Button next = new Button("Next");
-        Label invalidAnswer= new Label("");
-
+        Label invalidAnswer = new Label("");
 
         GridPane game = new GridPane();
         game.setPrefSize(800, 500);
@@ -153,17 +154,16 @@ public class UI extends Application {
         game.add(question, 1, 0);
         game.add(answer, 1, 1);
         game.add(next, 2, 1);
-        game.add(invalidAnswer,1,2);
+        game.add(invalidAnswer, 1, 2);
 
         Scene gameScene = new Scene(game);
-        
-         //luodaan gamescene QUIZ 2
-        Label gametext2 = new Label("Quiz 2: Dinosaurs " + "\n" + "Type in the answer in the box below");
-        Label question2= new Label("On which continent have the most dinosaur fossils been found?  " + "\n" + "a:Europe " + "\n" + "b:North America " + "\n" + "c:Africa " + "\n" + "d: Asia");
-        TextField answer2 = new TextField();
-        Button next2= new Button("Next");
-        Label invalidAnswer2= new Label("");
 
+        //luodaan gamescene QUIZ 2
+        Label gametext2 = new Label("Quiz 2: Dinosaurs " + "\n" + "Type in the answer in the box below");
+        Label question2 = new Label("On which continent have the most dinosaur fossils been found?  " + "\n" + "a:Europe " + "\n" + "b:North America " + "\n" + "c:Africa " + "\n" + "d: Asia");
+        TextField answer2 = new TextField();
+        Button next2 = new Button("Next");
+        Label invalidAnswer2 = new Label("");
 
         GridPane game2 = new GridPane();
         game2.setPrefSize(800, 500);
@@ -176,7 +176,7 @@ public class UI extends Application {
         game2.add(question2, 1, 0);
         game2.add(answer2, 1, 1);
         game2.add(next2, 2, 1);
-        game2.add(invalidAnswer2,1,2);
+        game2.add(invalidAnswer2, 1, 2);
 
         Scene gameScene2 = new Scene(game2);
 
@@ -195,7 +195,6 @@ public class UI extends Application {
         gameover.add(overtext, 0, 0);
         gameover.add(percentage, 0, 1);
         gameover.add(goBackToMenu, 0, 2);
-        
 
         Scene gameoverScene = new Scene(gameover);
 
@@ -269,19 +268,19 @@ public class UI extends Application {
         quiz1.setOnAction((event) -> {
             stage.setScene(gameScene);
         });
-        
+
         //siirrytään peliin 2
-        quiz2.setOnAction((event)->{
-                    stage.setScene(gameScene2);
-                });
-        
+        quiz2.setOnAction((event) -> {
+            stage.setScene(gameScene2);
+        });
+
         // siirrytään vastauksesta seuraavaan kysym, muokkaa scenea sopivaksi quiz 1
         next.setOnAction((event) -> {
             question.setText(this.functions.getQ(1));
             answerTrimmed = answer.getText().trim().toLowerCase();
-            if(!answerTrimmed.equals("a")&&!answerTrimmed.equals("b")&&!answerTrimmed.equals("c")&&!answerTrimmed.equals("d")){
+            if (!answerTrimmed.equals("a") && !answerTrimmed.equals("b") && !answerTrimmed.equals("c") && !answerTrimmed.equals("d")) {
                 invalidAnswer.setText("Invalid answer" + "\n" + "No points given");
-            }else{
+            } else {
                 invalidAnswer.setText("");
             }
             if (answerTrimmed.equals(this.functions.getA(1))) {
@@ -297,15 +296,15 @@ public class UI extends Application {
             }
             answer.setText("");
         });
-        
+
         //siirrytään seruraavaan quiz2
         // siirrytään vastauksesta seuraavaan kysym, muokkaa scenea sopivaksi quiz 1
         next2.setOnAction((event) -> {
             question2.setText(this.functions.getQ(2));
             answerTrimmed = answer2.getText().trim().toLowerCase();
-            if(!answerTrimmed.equals("a")&&!answerTrimmed.equals("b")&&!answerTrimmed.equals("c")&&!answerTrimmed.equals("d")){
+            if (!answerTrimmed.equals("a") && !answerTrimmed.equals("b") && !answerTrimmed.equals("c") && !answerTrimmed.equals("d")) {
                 invalidAnswer2.setText("Invalid answer" + "\n" + "No points given");
-            }else{
+            } else {
                 invalidAnswer2.setText("");
             }
             if (answerTrimmed.equals(this.functions.getA(2))) {
@@ -321,17 +320,16 @@ public class UI extends Application {
             }
             answer2.setText("");
         });
-        
 
         //palaa menuun 1 scenestä
         goBackToMenu.setOnAction((event) -> {
-                this.functions.indexToZero();
-                invalidAnswer.setText("");
-                invalidAnswer2.setText("");
-                question.setText("What kind of fish is Nemo in the movie 'Finding Nemo'?" + "\n" + "a:Tiger Shark " + "\n" + "b:Salmon " + "\n" + "c:Clownfish " + "\n" + "d: Goldfish");
-                question2.setText("On which continent have the most dinosaur fossils been found?  " + "\n" + "a:Europe " + "\n" + "b:North America " + "\n" + "c:Africa " + "\n" + "d: Asia");
-                stage.setScene(gamemenuScene);
-                       
+            this.functions.indexToZero();
+            invalidAnswer.setText("");
+            invalidAnswer2.setText("");
+            question.setText("What kind of fish is Nemo in the movie 'Finding Nemo'?" + "\n" + "a:Tiger Shark " + "\n" + "b:Salmon " + "\n" + "c:Clownfish " + "\n" + "d: Goldfish");
+            question2.setText("On which continent have the most dinosaur fossils been found?  " + "\n" + "a:Europe " + "\n" + "b:North America " + "\n" + "c:Africa " + "\n" + "d: Asia");
+            stage.setScene(gamemenuScene);
+
         });
 
         //mene stats
@@ -339,15 +337,15 @@ public class UI extends Application {
             //this.functions.countAverage(1);
             //muillekkin samat
             stats1.setText("You have played Quiz 1 " + this.functions.noOfTimesPlayed(1) + " times" + "\n" + "and your average score for Quiz 1 is " + this.functions.countAverage(1));
-            stats2.setText("\n" +"You have played Quiz 2 " + this.functions.noOfTimesPlayed(2) + " times" + "\n" + "and your average score for Quiz 2 is " + this.functions.countAverage(2));
+            stats2.setText("\n" + "You have played Quiz 2 " + this.functions.noOfTimesPlayed(2) + " times" + "\n" + "and your average score for Quiz 2 is " + this.functions.countAverage(2));
             stage.setScene(statsScene);
         });
         goBack2.setOnAction((event) -> {
             stage.setScene(gamemenuScene);
         });
-        
+
         //quit app
-        quit.setOnAction((event)->{
+        quit.setOnAction((event) -> {
             stage.close();
         });
 
@@ -357,7 +355,8 @@ public class UI extends Application {
     }
 
     /**
-     *launches main method
+     * launches main method
+     *
      * @param args
      */
     public static void main(String[] args) {
