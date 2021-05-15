@@ -30,4 +30,17 @@ Kun kirjautumisnäkymässä täytetään käyttäjätunnus ja salasana kentät (
 
 ![Page2](https://user-images.githubusercontent.com/80842633/116143020-43c98780-a6e3-11eb-9d78-ca36c16469b6.jpg)
 
+### Uuden käyttäjän luominen
 
+
+### Pelin valitseminen
+
+### Pelin pelaaminen
+
+### Pelin päättyminen
+
+### Pelistatistiikan katsominen
+
+## Ohjelman rakenteeseen jääneet heikkoudet
+- Käyttöliittymän metodia start olisi voinut pilkkoa pienemmiksi metodeiksi. 
+- Pelien keskiarvopisteiden ja pelattujen pelien määrä jäi pysyväistallennuksen ulkopuolelle
