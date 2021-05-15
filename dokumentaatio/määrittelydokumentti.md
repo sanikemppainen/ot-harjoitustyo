@@ -13,9 +13,8 @@ Sovelluksessa on vain yksi käyttäjärooli, normaali pelaaja.
 ## Käyttöliittymäluonnos ##
 Sovelluksessa on useita eri näkymiä, ensimmäinen on kirjautumissivu. Tästä voi mennä luomaan uuden käyttäjän tai siirtyä pelimenuun. Tässä pelimenu näkymässä voi valita mistä aiheesta haluaa pelata pelin tai
 voi tarkastella omien pelien statistiikkaa. Tästä siirrytään sitten haluamalle sivulle, joko statistiikkasivulle tai kysymyksiin. Kysymysten loputtua näytetään viimeinen näkymä jossa näkyy montako vastausta meni oikein.
-![maarittelydokumentti](https://user-images.githubusercontent.com/80842633/112718011-f77b0400-8ef8-11eb-9ef4-2fdcc7480d99.jpg)
 
-
+![kayttoliittymaluonnos](https://user-images.githubusercontent.com/80842633/118363207-efa41b80-b59b-11eb-915c-6de4ef920593.png)
 
 ## Perusversion tarjoama toiminnallisuus ##
 ## Ennen kirjautumista ##
