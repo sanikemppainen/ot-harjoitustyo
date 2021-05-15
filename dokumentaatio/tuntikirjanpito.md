@@ -11,7 +11,13 @@
 | 25.4  | 10   | Ensimmäisen pelin tekeminen loppuun, pelien logiikan nollaus, GUI edistys, stats sivun aloitus|
 | 26.4  | 5    | Database tiedosto korruptoitui, sen korjaus ja edelliseen versioon palaaminen ja koodin uudelleen kirjoittaminen|
 | 4.5   | 10    | Toisen Quiz rakennus, quit nappi GUihin, toiminnallisuus joka tarkistaa että vastaukset on a-d, javadoc|
+| 10.5  | 8     | H2 database korjaamista, javadoc loppuun|
+| 11.5  | 4     | Koodin yksinkertaistamista |
+| 12.5  | 2     | JUnit testien rakentamista |
+| 13.5  | 4     | Muuttujien ja luokkien uudelleen nimeämistä, testien rakentamista ja luokkatasoon muuttamista |
+| 14.5  | 2     | Testausta ja checkstyle virheiden korjaamista, dokumentointia |
+| 15.5  | 6     | Testausta, javadocin viimeistelyä, checkstyle korjaamista, dokumenttien kirjoitus |
 
 
-Tuntien summa: 48
+Tuntien summa: 79
 
