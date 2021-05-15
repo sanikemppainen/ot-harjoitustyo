@@ -16,4 +16,4 @@ Sovelluksen rivikattavuus on 93% ja haarautumiskattavuus on 84%. Käyttöliittym
 ![jacoco](https://user-images.githubusercontent.com/80842633/118359737-9634f000-b58d-11eb-885b-f1f052b3b661.png)
 
 ## Järjestelmätestaus
-Sovellusta on testattu manuaalisesti niin Linux kuin OSX käyttöjärjestelmillä. Kaikki määrittelydokmentin listaamat toiminnalisuudet on testattu läpi ja ne toimivat. 
+Sovellusta on testattu manuaalisesti niin Linux kuin OSX käyttöjärjestelmillä. Kaikki [määrittelydokumentin](https://github.com/sanikemppainen/ot-harjoitustyo/blob/main/dokumentaatio/M%C3%A4%C3%A4rittelydokumentti.md) listaamat toiminnalisuudet on testattu läpi ja ne toimivat. 
