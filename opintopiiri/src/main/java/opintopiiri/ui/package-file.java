@@ -1,5 +1,4 @@
 /**
- * Käyttöliittymäkomponentit ja toiminnallisuus
+ * Graphic user interface
  */
-
 package opintopiiri.ui;

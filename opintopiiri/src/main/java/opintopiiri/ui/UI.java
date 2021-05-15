@@ -48,7 +48,9 @@ public class UI extends Application {
     }
 
     /**
-     * Starts the user interface application and builds it
+     * Starts the user interface application and builds it method to call
+     * resetH2 database left to make it easier to continue building the
+     * application in the future
      *
      * @param stage
      * @throws SQLException
@@ -56,12 +58,11 @@ public class UI extends Application {
      */
     @Override
     public void start(Stage stage) throws SQLException, ClassNotFoundException {
-        //eka login näyttö
         //this.userdao.resetH2();
         stage.setTitle("Opintopiiri Sovellus");
 
         this.userdao.createConnection();
-        //loginscene
+
         Label usernameText = new Label("Username:");
         TextField usernameField = new TextField();
         Label passwordText = new Label("Password:");
@@ -88,7 +89,6 @@ public class UI extends Application {
         Scene loginScene = new Scene(login);
         stage.setScene(loginScene);
 
-        //registerScene luodaan
         Label newUsernameText = new Label("New username:");
         TextField newUsernameField = new TextField();
         Label newPasswordText = new Label("New password:");
@@ -114,7 +114,6 @@ public class UI extends Application {
 
         Scene registerScene = new Scene(register);
 
-        //luodaan gamemenuScene
         Label gamemenutext = new Label("Choose a quiz to play or view stats");
         Button quiz1 = new Button("Quiz 1: Fish");
         Button quiz2 = new Button("Quiz 2: Dinosaurs");
@@ -136,7 +135,6 @@ public class UI extends Application {
 
         Scene gamemenuScene = new Scene(gamemenu);
 
-        //luodaan gamescene QUIZ 1
         Label gametext = new Label("Quiz 1: Fish " + "\n" + "Type in the answer in the box below");
         Label question = new Label("What kind of fish is Nemo in the movie 'Finding Nemo'?" + "\n" + "a:Tiger Shark " + "\n" + "b:Salmon " + "\n" + "c:Clownfish " + "\n" + "d: Goldfish");
         TextField answer = new TextField();
@@ -158,7 +156,6 @@ public class UI extends Application {
 
         Scene gameScene = new Scene(game);
 
-        //luodaan gamescene QUIZ 2
         Label gametext2 = new Label("Quiz 2: Dinosaurs " + "\n" + "Type in the answer in the box below");
         Label question2 = new Label("On which continent have the most dinosaur fossils been found?  " + "\n" + "a:Europe " + "\n" + "b:North America " + "\n" + "c:Africa " + "\n" + "d: Asia");
         TextField answer2 = new TextField();
@@ -180,7 +177,6 @@ public class UI extends Application {
 
         Scene gameScene2 = new Scene(game2);
 
-        //gameoverscene
         Label overtext = new Label("Game over!");
         Label percentage = new Label("");
         Button goBackToMenu = new Button("Go back to menu");
@@ -198,7 +194,6 @@ public class UI extends Application {
 
         Scene gameoverScene = new Scene(gameover);
 
-        //statsScene
         Label statsText = new Label("STATS");
         Label stats1 = new Label("You have played Quiz 1 " + this.functions.noOfTimesPlayed(1) + " times" + "\n" + "and your average score for Quiz 1 is " + this.functions.countAverage(1) + "");
         Label stats2 = new Label("You have played Quiz 2 " + this.functions.noOfTimesPlayed(2) + " times" + "\n" + "and your average score for Quiz 1 is " + this.functions.countAverage(2) + "");
@@ -215,7 +210,6 @@ public class UI extends Application {
 
         Scene statsScene = new Scene(stats);
 
-        //siirrytään loginista pelimenuun
         loginButton.setOnAction((event) -> {
             try {
                 username = usernameField.getText().trim();
@@ -233,16 +227,15 @@ public class UI extends Application {
                 Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
-        //siirrytään rekisteröitymiseen
+
         registerButton.setOnAction((event) -> {
             stage.setScene(registerScene);
         });
 
-        //siirrytään takaisin loginnäyttöön rekisteröitymisestä
         returnToLogin.setOnAction((event) -> {
             stage.setScene(loginScene);
         });
-        //luodaan uusi käyttäjä ja muokataan tekstiä TOIMII
+
         createNew.setOnAction((event) -> {
             try {
                 username = newUsernameField.getText().trim();
@@ -252,29 +245,24 @@ public class UI extends Application {
                     registerErrorLabel.setText("This username is already taken");
 
                 } else {
-                    //System.out.println("ei ole db uutta käyttäjää vielä");
                     this.userdao.addUser(new User(username, password));
                     registerErrorLabel.setText("New user created!");
                 }
 
             } catch (SQLException ex) {
-                //System.out.println("sql ongelma create new nappi");
                 Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         });
 
-        //siirrytään peliin 1
         quiz1.setOnAction((event) -> {
             stage.setScene(gameScene);
         });
 
-        //siirrytään peliin 2
         quiz2.setOnAction((event) -> {
             stage.setScene(gameScene2);
         });
 
-        // siirrytään vastauksesta seuraavaan kysym, muokkaa scenea sopivaksi quiz 1
         next.setOnAction((event) -> {
             question.setText(this.functions.getQ(1));
             answerTrimmed = answer.getText().trim().toLowerCase();
@@ -287,18 +275,14 @@ public class UI extends Application {
                 this.functions.increasePoints(1);
             }
             if (!this.functions.checkIfMoreQs()) {
-                //System.out.println("sisällä");
                 percentage.setText("You got " + this.functions.getPoints(1) + "/8 correct!");
                 stage.setScene(gameoverScene);
                 this.functions.addNoOfTimesPlayed(1);
                 this.functions.addPoints(1);
-                //this.functions.countAverage(1);
             }
             answer.setText("");
         });
 
-        //siirrytään seruraavaan quiz2
-        // siirrytään vastauksesta seuraavaan kysym, muokkaa scenea sopivaksi quiz 1
         next2.setOnAction((event) -> {
             question2.setText(this.functions.getQ(2));
             answerTrimmed = answer2.getText().trim().toLowerCase();
@@ -311,7 +295,6 @@ public class UI extends Application {
                 this.functions.increasePoints(2);
             }
             if (!this.functions.checkIfMoreQs()) {
-                //System.out.println("sisällä");
                 percentage.setText("You got " + this.functions.getPoints(2) + "/8 correct!");
                 stage.setScene(gameoverScene);
                 this.functions.addNoOfTimesPlayed(2);
@@ -321,7 +304,6 @@ public class UI extends Application {
             answer2.setText("");
         });
 
-        //palaa menuun 1 scenestä
         goBackToMenu.setOnAction((event) -> {
             this.functions.indexToZero();
             invalidAnswer.setText("");
@@ -332,10 +314,7 @@ public class UI extends Application {
 
         });
 
-        //mene stats
         seeStats.setOnAction((event) -> {
-            //this.functions.countAverage(1);
-            //muillekkin samat
             stats1.setText("You have played Quiz 1 " + this.functions.noOfTimesPlayed(1) + " times" + "\n" + "and your average score for Quiz 1 is " + this.functions.countAverage(1));
             stats2.setText("\n" + "You have played Quiz 2 " + this.functions.noOfTimesPlayed(2) + " times" + "\n" + "and your average score for Quiz 2 is " + this.functions.countAverage(2));
             stage.setScene(statsScene);
@@ -344,12 +323,10 @@ public class UI extends Application {
             stage.setScene(gamemenuScene);
         });
 
-        //quit app
         quit.setOnAction((event) -> {
             stage.close();
         });
 
-        //lopussa vaan show
         stage.show();
 
     }

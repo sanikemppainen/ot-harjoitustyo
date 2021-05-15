@@ -1,5 +1,3 @@
-//yksittäiset this.username=username
-//hae tällä yksittäisellä userdaosta
 package opintopiiri.domain;
 
 /**
@@ -24,6 +22,7 @@ public class User {
     }
 
     /**
+     * get username
      *
      * @return
      */
@@ -32,6 +31,7 @@ public class User {
     }
 
     /**
+     * set username
      *
      * @param username
      */
@@ -40,6 +40,7 @@ public class User {
     }
 
     /**
+     * get password
      *
      * @return
      */
@@ -48,6 +49,7 @@ public class User {
     }
 
     /**
+     * set password
      *
      * @param password
      */
@@ -56,6 +58,7 @@ public class User {
     }
 
     /**
+     * String
      *
      * @return
      */

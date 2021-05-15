@@ -1,5 +1,4 @@
 /**
- * Sovelluslogiikka
+ * Application logic
  */
-
 package opintopiiri.domain;
