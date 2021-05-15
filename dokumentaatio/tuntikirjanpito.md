@@ -16,8 +16,8 @@
 | 12.5  | 2     | JUnit testien rakentamista |
 | 13.5  | 4     | Muuttujien ja luokkien uudelleen nimeämistä, testien rakentamista ja luokkatasoon muuttamista |
 | 14.5  | 2     | Testausta ja checkstyle virheiden korjaamista, dokumentointia |
-| 15.5  | 6     | Testausta, javadocin viimeistelyä, checkstyle korjaamista, dokumenttien kirjoitus |
+| 15.5  | 8     | Testausta, javadocin viimeistelyä, checkstyle korjaamista, dokumenttien kirjoitus |
 
 
-Tuntien summa: 79
+Tuntien summa: 81
 
