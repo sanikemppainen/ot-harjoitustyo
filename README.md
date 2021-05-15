@@ -4,13 +4,13 @@ Sovelluksen tarkoitus on antaa käyttäjän pelata eri monivalintakysymyspelejä
 
 ## Dokumentaatio ## 
 
-  [Määrittelydokumentti](https://github.com/sanikemppainen/ot-harjoitustyo/blob/main/dokumentaatio/M%C3%A4%C3%A4rittelydokumentti.md)
+  [Määrittelydokumentti](https://github.com/sanikemppainen/ot-harjoitustyo/blob/main/dokumentaatio/m%C3%A4%C3%A4rittelydokumentti.md)
 
   [Harjoitustyöhön käytetyt tunnit](https://github.com/sanikemppainen/ot-harjoitustyo/blob/main/dokumentaatio/tuntikirjanpito.md)
   
    [Arkkitehtuuri](https://github.com/sanikemppainen/ot-harjoitustyo/blob/1e0b0cd524cc92335ad43e255511abeb4475e670/dokumentaatio/arkkitehtuuri.md)
    
-   [Käyttöohje](https://github.com/sanikemppainen/ot-harjoitustyo/blob/main/dokumentaatio/K%C3%A4ytt%C3%B6ohje.md)
+   [Käyttöohje](https://github.com/sanikemppainen/ot-harjoitustyo/blob/main/dokumentaatio/k%C3%A4ytt%C3%B6ohje.md)
    
    [Testausdokumentti](https://github.com/sanikemppainen/ot-harjoitustyo/blob/main/dokumentaatio/testausdokumentti.md)
 
