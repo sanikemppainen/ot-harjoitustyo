@@ -23,12 +23,6 @@ public class UserDaoTest {
     }
 
     @Test
-    public void checkIfUserFound() throws SQLException {
-        UserDao userdao = new UserDao(new User("nimi", "salasana"));
-        assertEquals(userdao.checkIfUserExists("nimi"), true);
-    }
-
-    @Test
     public void checkIfUserFoundFalse() throws SQLException {
         UserDao userdao = new UserDao(new User("nimi", "salasana"));
         assertEquals(userdao.checkIfUserExists("erinimi"), false);
@@ -38,11 +32,5 @@ public class UserDaoTest {
     public void checkIfLoginDetailsCorrectFalse() throws SQLException {
         UserDao userdao = new UserDao(new User("nimi", "salasana"));
         assertEquals(userdao.checkIfUsernameMatchesPassword("nimitoinen", "password"), false);
-    }
-
-    @Test
-    public void checkIfLoginDetailsCorrectTrue() throws SQLException {
-        UserDao userdao = new UserDao(new User("nimi", "salasana"));
-        assertEquals(userdao.checkIfUsernameMatchesPassword("nimi", "salasana"), true);
     }
 }
