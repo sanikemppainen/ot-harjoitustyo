@@ -20,7 +20,7 @@ Sovelluksen tarkoitus on antaa käyttäjän pelata eri monivalintakysymyspelejä
 
 [Viikko 6](https://github.com/sanikemppainen/ot-harjoitustyo/releases/tag/viikko6)
 
-[Lopullinen versio 1.0]()
+[Lopullinen versio 1.1](https://github.com/sanikemppainen/ot-harjoitustyo/releases/tag/final1.1)
  
 ## Komentorivitoiminnot ##
 ### Suoritus
