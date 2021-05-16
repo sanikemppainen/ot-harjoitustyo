@@ -17,7 +17,7 @@
 | 13.5  | 4     | Muuttujien ja luokkien uudelleen nimeämistä, testien rakentamista ja luokkatasoon muuttamista |
 | 14.5  | 2     | Testausta ja checkstyle virheiden korjaamista, dokumentointia |
 | 15.5  | 8     | Testausta, javadocin viimeistelyä, checkstyle korjaamista, dokumenttien kirjoitus |
-
+| 16.5  | 1     | Arkkitehtuuridokumentin viimeistely, testaus|
 
 Tuntien summa: 81
 
