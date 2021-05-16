@@ -16,10 +16,9 @@ Käyttöliittymässä on seitsemän erillistä näkymää: kirjautumisnäkymä, 
 Socelluslogiikan suhdetta muihin osiin kuvaa tämä luokka/pakkauskaavio:
 <img src="https://user-images.githubusercontent.com/80842633/118366174-50395580-b5a8-11eb-99b9-39dd4cdad810.jpeg" width="400"/>
 
-
 Sovelluslogiikan muodostaa luokat Functions ja User jotka kuvaa käyttäjiä ja pelin pelaamiseen tarvittavia tehtäviä. 
 
-User luokka tarjoaa mahdollisuuden luoda uuden käyttäjän syöttämällä tietokantaan uuden käyttäjän tiedot (käyttäjänimi, salasana, monestikko 1 ja 2 pelejä on pelattu ja mitkä niiden keskiarvo pisteet ovat) ja tarvittaessa muokata ja hakea näitä tietoja tietokannasta.
+User luokka tarjoaa mahdollisuuden luoda uuden käyttäjän syöttämällä tietokantaan uuden käyttäjän tiedot (käyttäjänimi, salasana) ja tarvittaessa muokata ja hakea näitä tietoja tietokannasta.
 
 Functions luokka toteuttaa UI:n tarvitsemat tapahtumat.
 
@@ -42,24 +41,27 @@ Kun kirjautumisnäkymässä täytetään käyttäjätunnus ja salasana kentät (
 
 ![3F9A82FA-75F8-4FCA-B72A-0036F0B9919D](https://user-images.githubusercontent.com/80842633/118365873-1fa4ec00-b5a7-11eb-8230-c0e4f4810962.jpeg)
 
+Käyttäjä nappia painamalla aktivoi tapahtumakäsittelijän joka kutsuu UserDao metodia kaksi kertaa, varmistaekseen että käyttäjä on olemassa ja että salasana ja käyttäjätunnus ovat oikein. UserDao luo yhteyden ja hakee tietoa H2 tietokannasta joka sitten vastaa esitettyihin kyselyihin. Sama logiikka että käyttäjä painaa nappia, UI haee tietoa UserDaolta joka hakee tai muokkaa tietoa tietokannasta toistuu kaikissa tilanteissa missä haetaan tai mmuokataan salasanan tai käyttäjänimen perusteella tietoa. Lopussa Scene vaihdetaan gamemenuSceneksi.
 
 ### Uuden käyttäjän luominen
+Jos login näkymä antaa virheilmoituksen että käyttäjää ei ole olemassa, käyttäjä ohjataan register näkymään jossa hän voi täyttää vaaditut käyttäjätunnus ja salasana kentät ja luoda uuden käyttäjän.
 
 ![5FED1263-E5E1-49C5-8428-44885BD4155E](https://user-images.githubusercontent.com/80842633/118365928-50852100-b5a7-11eb-88b7-55d0a43c8e8d.jpeg)
 
+Kun register new nappia painetaan, UIn tapahtumakäsittelijä kutsuu UserDaoa joka tarkistaa onko tietokannassa jo tämä kyseinen käyttäjä, jos ei niin se lisätään sinne ja uuden käyttäjän luominen luo User olion ja asettaa sen UserDaon kautta H2 tietokantaan.
+
 ### Pelin valitseminen
+Pelin valinta on yksinkertaista. Käyttäjä painaa Quiz1 nappia ja UI muokkaa sceneä gameSceneksi joka sisältää peliin tarvittavat komponentit. Kaikki tulevat esimerkit ja kaaviot on tehty Quiz 1 mukaan mutta sama logiikka toimii myös Quiz2 pelatessa.
 
 <img src="https://user-images.githubusercontent.com/80842633/118365960-6eeb1c80-b5a7-11eb-9bf7-033f46e9b650.jpeg" width="400"/>
 
 ### Pelin pelaaminen
+Pelin pelaaminen alkaa kun käyttäjä syöttää haluamansa vastauksen annettuun laatikkoon ja painaa next nappia jolloin UIn tapahtumankäsittelijä kutsuu Functions metodin getQ metodia jonka parametrina on tämän pelin tunniste numero, joko 1 tai 2 riippuen pelataanko Quiz1 tai Quiz2. Jatkossa sovellukseen voi lisätä helposti uusia Quizes tämän logiikan kautta sillä tätä voi helposti laajentaa. Sitten Functions metodi kutsuu getQ metodia Quiz luokasta parametrinään sen hetkinen indeksi. Pisteiden tallentaminen oikean vastauksen saatua toimii hyvin samanlaisella logiikalla, silloin haetaan vaan getA metodeilla tietoa. Kaikki pelin pelaamiseen liittyvä toiminnallisuus toimii näin että UI kutsuu Functions metodia joka tarvittaessa kutsuu vielä Quiz luokkia.
 
 <img src="https://user-images.githubusercontent.com/80842633/118366001-980bad00-b5a7-11eb-95ce-1a9ac51406ae.jpeg" width="600"/>
 
-### Pisteiden talletus
-
-![18339A9E-2873-49D3-8643-2CE62F58BC85](https://user-images.githubusercontent.com/80842633/118366075-ef118200-b5a7-11eb-8e73-7b0f18b3452f.jpeg)
-
 ### Pelistatistiikan katsominen
+Pelistatistiikan hakeminen tapahtuu myös Käyttäjä->UI->Functions tavalla.
 
 <img src="https://user-images.githubusercontent.com/80842633/118366098-07819c80-b5a8-11eb-90aa-975f6971009f.jpeg" width="500"/>
 
